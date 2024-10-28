@@ -2,13 +2,16 @@
 // Você pode escrever seu código neste editor
 
 //iniciando variaveis
-var right,left,jump,attack;
+var right,left,jump,attack,dash;
 var chao = place_meeting(x, y + 1, obj_block);
 
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
 jump = keyboard_check_pressed(ord("W"));
 attack = keyboard_check_pressed(ord("J"));
+dash = keyboard_check_pressed(ord("K"));
+
+if(ataque_buff > 0) ataque_buff -= 1;
 
 //Aplicando gravidade
 if(!chao){
@@ -16,10 +19,14 @@ if(!chao){
 	 	velv += GRAVIDADE * massa;
 	}
 } 
+
+//Código de movimentacao
+velh = (right - left) * max_velh;
  
  //Iniciando a maquina de estados
 switch(estado)
 {
+	#region parado
 	case "parado":
 	{
 		//Comportamento do estado
@@ -39,10 +46,16 @@ switch(estado)
 			velh = 0;
 			image_index = 0;
 		}
+		else if(dash){
+			estado = "dash";
+			image_index = 0;
+		}
 		
 		break;
 	}
-		
+	#endregion
+	
+	#region movendo
 	case "movendo":
 	{
 		//Comportamento do estado de movimento
@@ -67,10 +80,16 @@ switch(estado)
 			velh = 0;
 			image_index = 0;
 		}
+		else if(dash){
+			estado = "dash";
+			image_index = 0;
+		}
 		
 		break;	
 	}
+	#endregion
 	
+	#region pulando
 	case "pulando":
 	{
 		if(velv > 0){
@@ -89,6 +108,9 @@ switch(estado)
 		}
 		break;
 	}
+	#endregion
+	
+	#region ataque
 	case "ataque":
 	{
 		velh = 0;
@@ -109,7 +131,12 @@ switch(estado)
 			posso = false;
 		}
 		
-		if(attack && combo < 2 && image_index >= image_number-2){
+		//Configurando com o buff
+		if(attack && combo < 2){
+			ataque_buff = room_speed;	
+		}
+		
+		if(ataque_buff && combo < 2 && image_index >= image_number-1){
 			combo++;
 			image_index = 0;
 			posso = true;
@@ -118,6 +145,9 @@ switch(estado)
 				instance_destroy(dano, false);
 				dano = noone;
 			}
+			
+			//Zerar buff
+			ataque_buff = 0;
 		}
 		if(image_index > image_number-1){
 			estado = "parado";
@@ -130,9 +160,52 @@ switch(estado)
 				dano = noone;
 			}
 		}
-			
+		if(dash){
+			estado = "dash";
+			image_index = 0;
+			combo = 0;
+			if(dano){
+				instance_destroy(dano, false);
+				dano = noone;
+			}
+		}		
 		break;
 	}
+	#endregion
+
+	/*#region dash
+	case "dash":
+	{
+		sprite_index = spr_player_dash;
+		
+		//Velocidade
+		velh = image_xscale * dash_vel;
+		
+		//Saindo do estado
+		if(image_index >= image_number - 1){
+			estado = "parado";	
+		}
+	}
+	#endregion*/
+	#region dash
+	case "dash":
+	{
+	    sprite_index = spr_player_dash;
+	
+	    // Verificar direção do dash com base nas teclas pressionadas
+	    if (right) {
+	        velh = dash_vel;
+	    } else if (left) {
+	        velh = -dash_vel;
+	    }
+	
+	    // Saindo do estado de dash ao final da animação
+	    if (image_index >= image_number - 1) {
+	        estado = "parado";
+	    }
+	}
+	#endregion
+	
 }
 
 if (keyboard_check(vk_enter)) room_restart();

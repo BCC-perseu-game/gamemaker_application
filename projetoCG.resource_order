@@ -35,6 +35,7 @@
     {"name":"spr_player_ataque2","order":3,"path":"sprites/spr_player_ataque2/spr_player_ataque2.yy",},
     {"name":"spr_player_ataque3","order":2,"path":"sprites/spr_player_ataque3/spr_player_ataque3.yy",},
     {"name":"spr_player_base","order":3,"path":"sprites/spr_player_base/spr_player_base.yy",},
+    {"name":"spr_player_dash","order":6,"path":"sprites/spr_player_dash/spr_player_dash.yy",},
     {"name":"spr_player_fall","order":1,"path":"sprites/spr_player_fall/spr_player_fall.yy",},
     {"name":"spr_player_parado2","order":1,"path":"sprites/spr_player_parado2/spr_player_parado2.yy",},
   ],
