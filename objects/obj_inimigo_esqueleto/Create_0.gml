@@ -4,16 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
-vida_max = 10;
+vida_max = 5;
 vida_atual = vida_max;
 
-max_velh = 4;
-max_velv = 6;
-
-mostra_estado = true;
-
-combo = 0;
-dano = noone;
-ataque = 1;
-posso = true;
-ataque_mult = 1;
+max_velh = 1;
+max_velv = 1;

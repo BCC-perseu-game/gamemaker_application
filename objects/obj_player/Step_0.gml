@@ -101,16 +101,38 @@ switch(estado)
 			sprite_index = spr_player_ataque3;
 		}
 		
+		//Criando objeto de dano
+		if (image_index >= 2 && dano == noone && posso){
+			dano = instance_create_layer(x + sprite_width/2 , y - sprite_height/2, layer, obj_dano);
+			dano.dano = ataque * ataque_mult;
+			dano.pai = id;
+			posso = false;
+		}
+		
 		if(attack && combo < 2 && image_index >= image_number-2){
 			combo++;
 			image_index = 0;
+			posso = true;
+			ataque_mult += .5; //MUDAR DANO NO COMBO
+			if(dano){
+				instance_destroy(dano, false);
+				dano = noone;
+			}
 		}
 		if(image_index > image_number-1){
 			estado = "parado";
 			velh = 0;
 			combo = 0;
+			posso = true;
+			ataque_mult = 1;
+			if(dano){
+				instance_destroy(dano, false);
+				dano = noone;
+			}
 		}
 			
 		break;
 	}
 }
+
+if (keyboard_check(vk_enter)) room_restart();
