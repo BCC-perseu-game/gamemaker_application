@@ -26,8 +26,10 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_block","order":2,"path":"objects/obj_block/obj_block.yy",},
+    {"name":"obj_dano","order":4,"path":"objects/obj_dano/obj_dano.yy",},
     {"name":"obj_entidade","order":1,"path":"objects/obj_entidade/obj_entidade.yy",},
     {"name":"spr_block","order":2,"path":"sprites/spr_block/spr_block.yy",},
+    {"name":"spr_dano","order":2,"path":"sprites/spr_dano/spr_dano.yy",},
     {"name":"spr_inimigo_esqueleto__hit","order":1,"path":"sprites/spr_inimigo_esqueleto__hit/spr_inimigo_esqueleto__hit.yy",},
     {"name":"spr_inimigo_esqueleto_dead","order":2,"path":"sprites/spr_inimigo_esqueleto_dead/spr_inimigo_esqueleto_dead.yy",},
     {"name":"spr_player_ataque2","order":3,"path":"sprites/spr_player_ataque2/spr_player_ataque2.yy",},

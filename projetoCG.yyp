@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -44,12 +44,14 @@
   "name":"projetoCG",
   "resources":[
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},},
+    {"id":{"name":"obj_dano","path":"objects/obj_dano/obj_dano.yy",},},
     {"id":{"name":"obj_entidade","path":"objects/obj_entidade/obj_entidade.yy",},},
     {"id":{"name":"obj_inimigo_esqueleto","path":"objects/obj_inimigo_esqueleto/obj_inimigo_esqueleto.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_ini","path":"scripts/scr_ini/scr_ini.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
+    {"id":{"name":"spr_dano","path":"sprites/spr_dano/spr_dano.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto__hit","path":"sprites/spr_inimigo_esqueleto__hit/spr_inimigo_esqueleto__hit.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_dead","path":"sprites/spr_inimigo_esqueleto_dead/spr_inimigo_esqueleto_dead.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_idle","path":"sprites/spr_inimigo_esqueleto_idle/spr_inimigo_esqueleto_idle.yy",},},

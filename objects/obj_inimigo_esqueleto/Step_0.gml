@@ -29,7 +29,7 @@ switch(estado){
 		if(sprite_index != spr_inimigo_esqueleto__hit){
 			//iniciando o que for preciso para este estado
 			image_index = 0;
-			vida_atual--;
+			//vida_atual--;
 		}
 		sprite_index = spr_inimigo_esqueleto__hit;
 		
