@@ -9,7 +9,7 @@ vida_atual = vida_max;
 
 max_velh = 3.7;
 max_velv = 6;
-dash_vel = 6;
+dash_vel = 8;
 
 mostra_estado = true;
 

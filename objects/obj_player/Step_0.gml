@@ -173,7 +173,9 @@ switch(estado)
 	}
 	#endregion
 
-	/*#region dash
+	#region dash
+	
+	/*
 	case "dash":
 	{
 		sprite_index = spr_player_dash;
@@ -186,8 +188,8 @@ switch(estado)
 			estado = "parado";	
 		}
 	}
-	#endregion*/
-	#region dash
+	*/
+	
 	case "dash":
 	{
 	    sprite_index = spr_player_dash;
@@ -197,7 +199,9 @@ switch(estado)
 	        velh = dash_vel;
 	    } else if (left) {
 	        velh = -dash_vel;
-	    }
+	    }else {
+			velh = image_xscale * dash_vel;
+		}
 	
 	    // Saindo do estado de dash ao final da animação
 	    if (image_index >= image_number - 1) {
