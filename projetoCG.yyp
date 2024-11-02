@@ -43,7 +43,9 @@
   },
   "name":"projetoCG",
   "resources":[
+    {"id":{"name":"font_0","path":"fonts/font_0/font_0.yy",},},
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},},
+    {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_dano","path":"objects/obj_dano/obj_dano.yy",},},
     {"id":{"name":"obj_entidade","path":"objects/obj_entidade/obj_entidade.yy",},},
     {"id":{"name":"obj_inimigo_esqueleto","path":"objects/obj_inimigo_esqueleto/obj_inimigo_esqueleto.yy",},},

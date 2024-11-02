@@ -26,6 +26,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_block","order":2,"path":"objects/obj_block/obj_block.yy",},
+    {"name":"obj_camera","order":5,"path":"objects/obj_camera/obj_camera.yy",},
     {"name":"obj_dano","order":4,"path":"objects/obj_dano/obj_dano.yy",},
     {"name":"obj_entidade","order":1,"path":"objects/obj_entidade/obj_entidade.yy",},
     {"name":"spr_block","order":2,"path":"sprites/spr_block/spr_block.yy",},

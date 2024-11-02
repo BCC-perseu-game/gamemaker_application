@@ -21,8 +21,8 @@ if(!chao){
 } 
 
 //Código de movimentacao
-velh = (right - left) * max_velh;
- 
+	velh = (right - left) * max_velh;
+
  //Iniciando a maquina de estados
 switch(estado)
 {
