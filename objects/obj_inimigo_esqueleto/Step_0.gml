@@ -7,8 +7,13 @@ if (!chao){
 	velv += GRAVIDADE * massa;	
 }
 	
+if(mouse_check_button_pressed(mb_right)){
+	estado = "attack";
+}
+	
 switch(estado){
 	case "parado":{
+		velh = 0;
 		timer_estado++;
 		if(sprite_index != spr_inimigo_esqueleto_idle){
 			//iniciando o estado
@@ -36,6 +41,7 @@ switch(estado){
 		timer_estado++;
 		if(sprite_index != spr_inimigo_esqueleto_walk){
 			image_index = 0;
+			velh = choose(1, -1);
 		}
 		sprite_index = spr_inimigo_esqueleto_walk;
 		
@@ -45,6 +51,19 @@ switch(estado){
 			timer_estado = 0;
 		}
 		
+		break;
+	}
+	case "attack":
+	{
+		velh = 0;
+		if(sprite_index != spr_inimigo_esqueleto_attack){
+			image_index = 0;	
+		}
+		sprite_index = spr_inimigo_esqueleto_attack;
+		
+		if(image_index > image_number - 1)
+		estado = "parado";
+		//Saindo do estado
 		break;
 	}
 	case "hit":

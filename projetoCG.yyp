@@ -53,6 +53,7 @@
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_dano","path":"sprites/spr_dano/spr_dano.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto__hit","path":"sprites/spr_inimigo_esqueleto__hit/spr_inimigo_esqueleto__hit.yy",},},
+    {"id":{"name":"spr_inimigo_esqueleto_attack","path":"sprites/spr_inimigo_esqueleto_attack/spr_inimigo_esqueleto_attack.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_dead","path":"sprites/spr_inimigo_esqueleto_dead/spr_inimigo_esqueleto_dead.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_idle","path":"sprites/spr_inimigo_esqueleto_idle/spr_inimigo_esqueleto_idle.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_walk","path":"sprites/spr_inimigo_esqueleto_walk/spr_inimigo_esqueleto_walk.yy",},},
