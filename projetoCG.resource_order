@@ -32,6 +32,7 @@
     {"name":"spr_dano","order":2,"path":"sprites/spr_dano/spr_dano.yy",},
     {"name":"spr_inimigo_esqueleto__hit","order":1,"path":"sprites/spr_inimigo_esqueleto__hit/spr_inimigo_esqueleto__hit.yy",},
     {"name":"spr_inimigo_esqueleto_dead","order":2,"path":"sprites/spr_inimigo_esqueleto_dead/spr_inimigo_esqueleto_dead.yy",},
+    {"name":"spr_inimigo_esqueleto_walk","order":3,"path":"sprites/spr_inimigo_esqueleto_walk/spr_inimigo_esqueleto_walk.yy",},
     {"name":"spr_player_ataque2","order":3,"path":"sprites/spr_player_ataque2/spr_player_ataque2.yy",},
     {"name":"spr_player_ataque3","order":2,"path":"sprites/spr_player_ataque3/spr_player_ataque3.yy",},
     {"name":"spr_player_base","order":3,"path":"sprites/spr_player_base/spr_player_base.yy",},

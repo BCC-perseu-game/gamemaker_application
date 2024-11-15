@@ -70,11 +70,10 @@ switch(estado)
 		{
 			estado = "parado";
 			velh = 0;
-		}else if(jump){
+		}else if(jump || velv != 0){
 			estado = "pulando";
-			velv = -max_velv
+			velv = (-max_velv * jump);
 			image_index = 0;
-
 		}else if(attack){
 			estado = "ataque";
 			velh = 0;
@@ -168,7 +167,11 @@ switch(estado)
 				instance_destroy(dano, false);
 				dano = noone;
 			}
-		}		
+		}	
+		if(velv != 0){
+			estado = "pulando";
+			image_index = 0;
+		}
 		break;
 	}
 	#endregion
