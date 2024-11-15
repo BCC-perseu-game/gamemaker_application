@@ -8,7 +8,8 @@ if (!chao){
 }
 	
 switch(estado){
-	case "parado":
+	case "parado":{
+		timer_estado++;
 		if(sprite_index != spr_inimigo_esqueleto_idle){
 			//iniciando o estado
 			image_index = 0;
@@ -19,11 +20,33 @@ switch(estado){
 		if(position_meeting(mouse_x,mouse_y,self)){
 			if(mouse_check_button_pressed(mb_right)){
 				estado = "hit";
-				image_index = 0;
+			
 			}
 		}
-		break;
+		//Indo para o estado de patrulha
+		if(irandom(timer_estado) > 300){
+			estado = choose("walk", "parado", "walk");
+			timer_estado = 0;
+		}
 		
+		break;
+	}
+	case "walk":
+	{
+		timer_estado++;
+		if(sprite_index != spr_inimigo_esqueleto_walk){
+			image_index = 0;
+		}
+		sprite_index = spr_inimigo_esqueleto_walk;
+		
+		//Condicao de saida do estado
+		if(irandom(timer_estado) > 300){
+			estado = choose("parado", "parado", "walk");
+			timer_estado = 0;
+		}
+		
+		break;
+	}
 	case "hit":
 	
 		if(sprite_index != spr_inimigo_esqueleto__hit){
@@ -45,6 +68,7 @@ switch(estado){
 	
 		
 	case "dead":
+	{
 		if(sprite_index != spr_inimigo_esqueleto_dead){
 			//iniciando o que for preciso para este estado
 			image_index = 0;
@@ -56,4 +80,5 @@ switch(estado){
 			image_speed = 0;
 			image_alpha-= .01;
 			if(image_alpha <= 0) instance_destroy();
+	}
 }

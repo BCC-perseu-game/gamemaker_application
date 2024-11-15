@@ -55,6 +55,7 @@
     {"id":{"name":"spr_inimigo_esqueleto__hit","path":"sprites/spr_inimigo_esqueleto__hit/spr_inimigo_esqueleto__hit.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_dead","path":"sprites/spr_inimigo_esqueleto_dead/spr_inimigo_esqueleto_dead.yy",},},
     {"id":{"name":"spr_inimigo_esqueleto_idle","path":"sprites/spr_inimigo_esqueleto_idle/spr_inimigo_esqueleto_idle.yy",},},
+    {"id":{"name":"spr_inimigo_esqueleto_walk","path":"sprites/spr_inimigo_esqueleto_walk/spr_inimigo_esqueleto_walk.yy",},},
     {"id":{"name":"spr_player_ataque1","path":"sprites/spr_player_ataque1/spr_player_ataque1.yy",},},
     {"id":{"name":"spr_player_ataque2","path":"sprites/spr_player_ataque2/spr_player_ataque2.yy",},},
     {"id":{"name":"spr_player_ataque3","path":"sprites/spr_player_ataque3/spr_player_ataque3.yy",},},
