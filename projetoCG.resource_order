@@ -19,6 +19,7 @@
     {"name":"Misc","order":1,"path":"folders/Sprites/Misc.yy",},
     {"name":"Aereo","order":4,"path":"folders/Sprites/Player/Aereo.yy",},
     {"name":"Ataque","order":5,"path":"folders/Sprites/Player/Ataque.yy",},
+    {"name":"Dead","order":8,"path":"folders/Sprites/Player/Dead.yy",},
     {"name":"Hit","order":7,"path":"folders/Sprites/Player/Hit.yy",},
     {"name":"Movendo","order":2,"path":"folders/Sprites/Player/Movendo.yy",},
     {"name":"Parado","order":1,"path":"folders/Sprites/Player/Parado.yy",},

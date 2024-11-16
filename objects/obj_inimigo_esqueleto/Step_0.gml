@@ -64,6 +64,8 @@ switch(estado){
 		velh = 0;
 		if(sprite_index != spr_inimigo_esqueleto_attack){
 			image_index = 0;
+			posso = true;
+			dano = noone;
 		}
 		sprite_index = spr_inimigo_esqueleto_attack;
 		
@@ -111,6 +113,7 @@ switch(estado){
 		
 	case "dead":
 	{
+		velh = 0;
 		if(sprite_index != spr_inimigo_esqueleto_dead){
 			//iniciando o que for preciso para este estado
 			image_index = 0;
