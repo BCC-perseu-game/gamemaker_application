@@ -12,4 +12,5 @@ max_velv = 1;
 
 timer_estado = 0;
 
+dist = 30;
 

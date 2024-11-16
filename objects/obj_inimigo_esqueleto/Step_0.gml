@@ -6,11 +6,13 @@ var chao = place_meeting(x, y+1 , obj_block);
 if (!chao){
 	velv += GRAVIDADE * massa;	
 }
-	
+
+/*
 if(mouse_check_button_pressed(mb_right)){
 	estado = "attack";
 }
-	
+*/
+
 switch(estado){
 	case "parado":{
 		velh = 0;
@@ -34,6 +36,8 @@ switch(estado){
 			timer_estado = 0;
 		}
 		
+		scr_ataca_player_melee(obj_player, dist, xscale);
+
 		break;
 	}
 	case "walk":
@@ -42,6 +46,7 @@ switch(estado){
 		if(sprite_index != spr_inimigo_esqueleto_walk){
 			image_index = 0;
 			velh = choose(1, -1);
+
 		}
 		sprite_index = spr_inimigo_esqueleto_walk;
 		
@@ -50,6 +55,7 @@ switch(estado){
 			estado = choose("parado", "parado", "walk");
 			timer_estado = 0;
 		}
+		scr_ataca_player_melee(obj_player, dist, xscale);
 		
 		break;
 	}
@@ -61,8 +67,10 @@ switch(estado){
 		}
 		sprite_index = spr_inimigo_esqueleto_attack;
 		
-		if(image_index > image_number - 1)
-		estado = "parado";
+		if(image_index > image_number - 1){
+			estado = "parado";
+		}
+		
 		//Saindo do estado
 		break;
 	}
@@ -80,7 +88,7 @@ switch(estado){
 			if(image_index > image_number - 1)
 				estado = "parado";
 		}
-		else if(image_index >= 4){
+		else if(image_index >= 3){
 			estado = "dead";
 		}
 		break;

@@ -49,6 +49,7 @@
     {"id":{"name":"obj_inimigo_esqueleto","path":"objects/obj_inimigo_esqueleto/obj_inimigo_esqueleto.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"scr_ataca_player_melee","path":"scripts/scr_ataca_player_melee/scr_ataca_player_melee.yy",},},
     {"id":{"name":"scr_ini","path":"scripts/scr_ini/scr_ini.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_dano","path":"sprites/spr_dano/spr_dano.yy",},},
