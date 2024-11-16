@@ -16,12 +16,12 @@ if(ataque_buff > 0) ataque_buff -= 1;
 //Aplicando gravidade
 if(!chao){
 	if(velv < max_velv * 2){
-	 	velv += GRAVIDADE * massa;
+	 	velv += GRAVIDADE * massa * global.vel_mult;
 	}
 } 
 
 //Código de movimentacao
-velh = (right - left) * max_velh;
+velh = (right - left) * max_velh * global.vel_mult;
  
  //Iniciando a maquina de estados
 switch(estado)
@@ -240,6 +240,13 @@ switch(estado)
 
 	case "dead":
 	{
+		
+		//checando se controlador existe
+		if(instance_exists(obj_game_controller)){
+			with(obj_game_controller){
+				game_over = true;
+			}
+		}
 	    // Reseta a animação da morte
 	    if (sprite_index != spr_player_dead) {
 	        sprite_index = spr_player_dead;
@@ -266,5 +273,3 @@ switch(estado)
 		estado = "parado";	
 	}
 }
-
-if (keyboard_check(vk_enter)) room_restart();
