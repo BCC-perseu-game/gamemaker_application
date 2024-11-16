@@ -14,3 +14,5 @@ timer_estado = 0;
 
 dist = 30;
 
+dano = noone;
+ataque = 1;

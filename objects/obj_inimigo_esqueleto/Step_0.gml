@@ -71,6 +71,20 @@ switch(estado){
 			estado = "parado";
 		}
 		
+		//Criando o dano
+		//ATENCAO: MUDAR PARA A NOSSA SPRITE, MOMENTO EM QUE O PLAYER SENTE O DANO
+		if(image_index >= 8 && dano == noone && image_index < 15){
+			dano = instance_create_layer(x,y,layer,obj_dano);
+			dano.dano = ataque;
+			dano.pai = id;
+		}
+		
+		//Desetruindo o dano
+		if(dano != noone && image_index >= 15){
+			instance_destroy(dano);
+			dano = noone;
+		}
+		
 		//Saindo do estado
 		break;
 	}
