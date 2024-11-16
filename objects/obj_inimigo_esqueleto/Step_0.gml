@@ -63,12 +63,29 @@ switch(estado){
 	{
 		velh = 0;
 		if(sprite_index != spr_inimigo_esqueleto_attack){
-			image_index = 0;	
+			image_index = 0;
+			posso = true;
+			dano = noone;
 		}
 		sprite_index = spr_inimigo_esqueleto_attack;
 		
 		if(image_index > image_number - 1){
 			estado = "parado";
+		}
+		
+		//Criando o dano
+		//ATENCAO: MUDAR PARA A NOSSA SPRITE, MOMENTO EM QUE O PLAYER SENTE O DANO
+		if(image_index >= 8 && dano == noone && image_index < 15 && posso){
+			dano = instance_create_layer(x + sprite_width/2 ,y - sprite_height/3, layer, obj_dano);
+			dano.dano = ataque;
+			dano.pai = id;
+			posso = false;
+		}
+		
+		//Desetruindo o dano
+		if(dano != noone && image_index >= 15){
+			instance_destroy(dano);
+			dano = noone;
 		}
 		
 		//Saindo do estado
@@ -96,6 +113,7 @@ switch(estado){
 		
 	case "dead":
 	{
+		velh = 0;
 		if(sprite_index != spr_inimigo_esqueleto_dead){
 			//iniciando o que for preciso para este estado
 			image_index = 0;
