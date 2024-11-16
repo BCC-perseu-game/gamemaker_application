@@ -195,8 +195,11 @@ switch(estado)
 	
 	case "dash":
 	{
-	    sprite_index = spr_player_dash;
-	
+	    if(sprite_index != spr_player_dash){
+			sprite_index = spr_player_dash;
+			image_index = 0;
+		}
+		velh = image_index * dash_vel;
 	    // Verificar direção do dash com base nas teclas pressionadas
 	    if (right) {
 	        velh = dash_vel;
@@ -210,9 +213,33 @@ switch(estado)
 	    if (image_index >= image_number - 1) {
 	        estado = "parado";
 	    }
+		
+		break;
 	}
 	#endregion
 	
+	case "hit":
+	{
+	    // Verifica se o player já não está no estado "hit"
+	    if (sprite_index != spr_player_hit) {
+	        sprite_index = spr_player_hit;
+	        image_index = 0; // Reseta o índice da imagem para começar a animação do hit
+	    }
+    
+	    // Verifica quando a animação termina para voltar ao estado "parado"
+	    if (image_index >= image_number - 1) {
+	        estado = "parado"; // Transita de volta para o estado "parado"
+	    }
+
+	    break;
+	}
+
+	
+	//Estado Padrao
+	default:
+	{
+		//estado = "parado";	
+	}
 }
 
 if (keyboard_check(vk_enter)) room_restart();
