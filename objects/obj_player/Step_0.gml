@@ -3,7 +3,7 @@
 
 //iniciando variaveis
 var right,left,jump,attack,dash;
-var chao = place_meeting(x, y + 1, obj_block);
+var chao = place_meeting(x, y + vspeed + 1, obj_block);
 
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
@@ -19,9 +19,12 @@ if(!chao){
 	 	velv += GRAVIDADE * massa * global.vel_mult;
 	}
 } 
-
-//Código de movimentacao
-velh = (right - left) * max_velh * global.vel_mult;
+ 
+ if place_meeting(x, y, obj_bota_de_hermes) and !bota_de_hermes{
+	 max_velh *= 1.5
+	 bota_de_hermes = true
+ }
+ 
  
  //Iniciando a maquina de estados
 switch(estado)
@@ -43,7 +46,7 @@ switch(estado)
 			image_index = 0;
 		}else if(attack){
 			estado = "ataque";
-			velh = 0;
+			//velh = 0;
 			image_index = 0;
 		}
 		else if(dash){
@@ -58,6 +61,9 @@ switch(estado)
 	#region movendo
 	case "movendo":
 	{
+		//Código de movimentacao
+		velh = (right - left) * max_velh * global.vel_mult;
+		
 		//Comportamento do estado de movimento
 		sprite_index = spr_player_run;
 		
@@ -76,7 +82,7 @@ switch(estado)
 			image_index = 0;
 		}else if(attack){
 			estado = "ataque";
-			velh = 0;
+			//velh = 0;
 			image_index = 0;
 		}
 		else if(dash){
@@ -91,6 +97,9 @@ switch(estado)
 	#region pulando
 	case "pulando":
 	{
+		//Código de movimentacao
+		velh = (right - left) * max_velh * global.vel_mult;
+		
 		if(velv > 0){
 			sprite_index = spr_player_fall;
 		}else{
@@ -102,8 +111,13 @@ switch(estado)
 		}
 		//Condição de troca de estado
 		if(chao){
-			estado = "parado";
-			velh = 0;
+			if abs(velh) < 0.1{ 
+				estado = "parado";
+				velh = 0;
+			}
+			else{
+				estado = "movendo"
+			}
 		}
 		break;
 	}
@@ -112,7 +126,7 @@ switch(estado)
 	#region ataque
 	case "ataque":
 	{
-		velh = 0;
+		velh *= 0.9;
 		
 		if(combo == 0){
 			sprite_index = spr_player_ataque1;
@@ -132,7 +146,7 @@ switch(estado)
 		
 		//Configurando com o buff
 		if(attack && combo < 2){
-			ataque_buff = room_speed;	
+			ataque_buff = room_speed;
 		}
 		
 		if(ataque_buff && combo < 2 && image_index >= image_number-1){

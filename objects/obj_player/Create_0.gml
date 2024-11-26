@@ -15,6 +15,8 @@ dash_vel = 8;
 
 mostra_estado = true;
 
+bota_de_hermes = false
+
 combo = 0;
 dano = noone;
 ataque = 1;

@@ -42,23 +42,38 @@ switch(estado){
 	}
 	case "walk":
 	{
-		timer_estado++;
-		if(sprite_index != spr_inimigo_esqueleto_walk){
-			image_index = 0;
-			velh = choose(1, -1) * global.vel_mult;
+	    timer_estado++;
+	    if (sprite_index != spr_inimigo_esqueleto_walk) {
+	        image_index = 0;
+	        velh = choose(1, -1) * global.vel_mult;
+	    }
+	    sprite_index = spr_inimigo_esqueleto_walk;
 
-		}
-		sprite_index = spr_inimigo_esqueleto_walk;
-		
-		//Condicao de saida do estado
-		if(irandom(timer_estado) > 300){
-			estado = choose("parado", "parado", "walk");
-			timer_estado = 0;
-		}
-		scr_ataca_player_melee(obj_player, dist, xscale);
-		
-		break;
+	    // Condição de saída do estado
+	    if (irandom(timer_estado) > 300) {
+	        estado = choose("parado", "parado", "walk");
+	        timer_estado = 0;
+	    }
+
+	    // Atacar o jogador
+	    scr_ataca_player_melee(obj_player, dist, xscale);
+
+	    // Verificar colisão frontal com bloco
+	    if (place_meeting(x + xscale * 4, y, obj_block)) {
+	        velh *= -1;
+	    }
+
+	    // Verificar ausência de chão 5 pixels à frente
+	    var check_x = x + xscale * 10;
+	    var check_y = y + 1; // Um pixel abaixo para detectar o chão
+	    if (!place_meeting(check_x, check_y, obj_block)) {
+	        velh *= -1;
+	    }
+
+	    break;
 	}
+
+
 	case "attack":
 	{
 		velh = 0;
@@ -92,7 +107,7 @@ switch(estado){
 		break;
 	}
 	case "hit":
-	
+		velh *= 0.9
 		if(sprite_index != spr_inimigo_esqueleto__hit){
 			//iniciando o que for preciso para este estado
 			image_index = 0;

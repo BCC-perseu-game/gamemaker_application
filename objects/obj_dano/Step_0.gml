@@ -33,6 +33,8 @@ for(var i = 0; i < tam; i++){
 		outro.estado = "hit";
 		outro.image_index = 0;
 		outro.vida_atual -= dano;
+		outro.velh += 4 * sign(outro.x - obj_player.x)
+		outro.xscale = -sign(outro.velh)
 		
 		//preciso checar se to acertando o inimigo
 		//checando se sou filho do inimigo pai
