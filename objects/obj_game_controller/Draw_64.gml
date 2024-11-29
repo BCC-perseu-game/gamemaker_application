@@ -3,7 +3,7 @@ var cam = camera_get_active()
 draw_set_colour(c_white)
 	draw_set_halign(fa_left)
 	draw_set_valign(fa_top)
-	draw_text(0, 0, $"{camera_get_view_width(cam)} - {view_get_wport(0)} - {view_wport[0]} - ")
+	//draw_text(0, 0, $"{camera_get_view_width(cam)} - {view_get_wport(0)} - {view_wport[0]} - ")
 //criando a tela de gameover
 if(game_over){
 	//Pegando info

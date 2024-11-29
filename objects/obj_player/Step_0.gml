@@ -26,6 +26,14 @@ if place_meeting(x, y, obj_bota_de_hermes) and !bota_de_hermes{
     max_velv *= 1.5;       // Aumenta a velocidade horizontal máxima
     bota_de_hermes = true; // Marca que a bota já foi coletada
 }
+if place_meeting(x, y, obj_paixao_andromeda) and !bota_de_hermes {
+    var cura = 5; // Quantidade de vida para curar
+    vida_atual += cura;
+    if (vida_atual > vida_max) {
+        vida_atual = vida_max; // Garante que a vida não exceda o máximo
+    }
+}
+
  
  
  //Iniciando a maquina de estados

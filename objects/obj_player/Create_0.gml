@@ -8,7 +8,7 @@ event_inherited();
 
 teleporting = false;
 
-vida_max = 2;
+vida_max = 10;
 vida_atual = vida_max;
 
 max_velh = 3.7;

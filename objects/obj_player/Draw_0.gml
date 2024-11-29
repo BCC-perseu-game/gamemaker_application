@@ -4,4 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-draw_text(20,20,vida_atual);
+draw_text(40, 20, "Vida: " + string(vida_atual));

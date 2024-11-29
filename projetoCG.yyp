@@ -47,6 +47,7 @@
     {"id":{"name":"obj_inimigo_esqueleto","path":"objects/obj_inimigo_esqueleto/obj_inimigo_esqueleto.yy",},},
     {"id":{"name":"obj_inimigo_pai","path":"objects/obj_inimigo_pai/obj_inimigo_pai.yy",},},
     {"id":{"name":"obj_itens","path":"objects/obj_itens/obj_itens.yy",},},
+    {"id":{"name":"obj_paixao_andromeda","path":"objects/obj_paixao_andromeda/obj_paixao_andromeda.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_portal_sala1_1_1","path":"objects/obj_portal_sala1_1_1/obj_portal_sala1_1_1.yy",},},
     {"id":{"name":"obj_portal_sala1_1","path":"objects/obj_portal_sala1_1/obj_portal_sala1_1.yy",},},

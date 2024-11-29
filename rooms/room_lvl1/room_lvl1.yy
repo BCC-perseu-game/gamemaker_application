@@ -37,6 +37,7 @@
     {"name":"inst_2FD6B97","path":"rooms/room_lvl1/room_lvl1.yy",},
     {"name":"inst_7AA9A183","path":"rooms/room_lvl1/room_lvl1.yy",},
     {"name":"inst_5428C23D","path":"rooms/room_lvl1/room_lvl1.yy",},
+    {"name":"inst_28596DF8","path":"rooms/room_lvl1/room_lvl1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -103,6 +104,7 @@
         {"$GMRInstance":"v1","%Name":"inst_2FD6B97","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2FD6B97","objectId":{"name":"obj_wall_do_gomes","path":"objects/obj_wall_do_gomes/obj_wall_do_gomes.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":0.5,"x":1344.0,"y":288.0,},
         {"$GMRInstance":"v1","%Name":"inst_7AA9A183","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7AA9A183","objectId":{"name":"obj_portal_sala1_2","path":"objects/obj_portal_sala1_2/obj_portal_sala1_2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":2.0,"x":1344.0,"y":544.0,},
         {"$GMRInstance":"v1","%Name":"inst_5428C23D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5428C23D","objectId":{"name":"obj_portal_sala1_2_1","path":"objects/obj_portal_sala1_2_1/obj_portal_sala1_2_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.5,"x":1344.0,"y":320.0,},
+        {"$GMRInstance":"v1","%Name":"inst_28596DF8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_28596DF8","objectId":{"name":"obj_paixao_andromeda","path":"objects/obj_paixao_andromeda/obj_paixao_andromeda.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1184.0,"y":416.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"tile_back","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tile_back","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":48,"SerialiseWidth":86,"TileCompressedData":[
           -192,32,2,42,43,-57,32,2,42,43,-8,32,2,55,56,-15,32,2,57,58,-57,32,2,57,58,-8,32,2,70,71,-35,32,-2,27,
