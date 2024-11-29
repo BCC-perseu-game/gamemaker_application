@@ -9,7 +9,8 @@ var _velv = sign(velv);
 //horizontal
 repeat(abs(velh)){
 	if (place_meeting(x + _velh, y, obj_block)){
-		velh = 0;
+		estado = "parado"
+		velh *= -1;
 		break;
 	}
 	x += _velh;
@@ -19,6 +20,8 @@ repeat(abs(velv)){
 	if (place_meeting(x, y + _velv, obj_block)){
 		velv = 0;
 		break;
+	}else{
+		estado = "parado"
 	}
 	y += _velv;
 }
