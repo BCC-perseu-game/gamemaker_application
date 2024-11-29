@@ -6,7 +6,9 @@ randomize();
 // Inherit the parent event
 event_inherited();
 
-vida_max = 5;
+teleporting = false;
+
+vida_max = 2;
 vida_atual = vida_max;
 
 max_velh = 3.7;

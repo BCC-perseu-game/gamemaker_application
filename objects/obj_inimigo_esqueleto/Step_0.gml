@@ -97,7 +97,7 @@ switch(estado){
 			posso = false;
 		}
 		
-		//Desetruindo o dano
+		//Destruindo o dano
 		if(dano != noone && image_index >= 15){
 			instance_destroy(dano);
 			dano = noone;

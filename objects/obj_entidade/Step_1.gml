@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 //Olhando para o lado certo
-if (velh != 0) and estado != "hit"{ xscale = sign(velh); }
+if abs(velh) > 0.1{ xscale = sign(velh); }
 image_xscale = xscale;
 
 //Exibindo meu estado quando o usuário mandar

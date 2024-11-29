@@ -18,12 +18,14 @@ if(!chao){
 	if(velv < max_velv * 2){
 	 	velv += GRAVIDADE * massa * global.vel_mult;
 	}
-} 
+}
  
- if place_meeting(x, y, obj_bota_de_hermes) and !bota_de_hermes{
-	 max_velh *= 1.5
-	 bota_de_hermes = true
- }
+if place_meeting(x, y, obj_bota_de_hermes) and !bota_de_hermes{
+	massa *= 0.8;
+	max_velh *= 1.2;
+    max_velv *= 1.5;       // Aumenta a velocidade horizontal máxima
+    bota_de_hermes = true; // Marca que a bota já foi coletada
+}
  
  
  //Iniciando a maquina de estados
@@ -68,7 +70,7 @@ switch(estado)
 		sprite_index = spr_player_run;
 		
 		//código de movimentação
-		velh = (right - left) * max_velh;
+		//velh = (right - left) * max_velh;
 		
 		//condição de troca de estado
 		//Parado
@@ -226,6 +228,7 @@ switch(estado)
 	    // Saindo do estado de dash ao final da animação
 	    if (image_index >= image_number - 1) {
 	        estado = "parado";
+			velh = 0;
 	    }
 		
 		break;
@@ -238,10 +241,13 @@ switch(estado)
 	    if (sprite_index != spr_player_hit) {
 	        sprite_index = spr_player_hit;
 	        image_index = 0; // Reseta o índice da imagem para começar a animação do hit
-			
-			//tremendo a tela
-			screenshake(5);
+        
+	        // Tremendo a tela
+	        screenshake(5);
 	    }
+    
+	    // Ajusta a velocidade horizontal para evitar movimento
+	    velh = 0;
     
 	    // Verifica quando a animação termina para voltar ao estado "parado" ou "dead"
 	    if (image_index >= image_number - 1) {
@@ -269,7 +275,7 @@ switch(estado)
 	        sprite_index = spr_player_dead;
 	        image_index = 0; // Começa a animação de morte
 	    }
-    
+   
 	    // Animação de morte
 	    if (image_index >= image_number - 1) {
 	        image_speed = 0; // Pausa a animação
