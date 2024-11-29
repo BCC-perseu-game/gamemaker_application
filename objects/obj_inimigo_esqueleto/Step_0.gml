@@ -46,9 +46,11 @@ switch(estado){
 	    if (sprite_index != spr_inimigo_esqueleto_walk) {
 	        image_index = 0;
 	        velh = choose(1, -1) * global.vel_mult;
-	    }
-	    sprite_index = spr_inimigo_esqueleto_walk;
 
+	    }
+		
+	    sprite_index = spr_inimigo_esqueleto_walk;
+		
 	    // Condição de saída do estado
 	    if (irandom(timer_estado) > 300) {
 	        estado = choose("parado", "parado", "walk");
@@ -91,7 +93,16 @@ switch(estado){
 		//Criando o dano
 		//ATENCAO: MUDAR PARA A NOSSA SPRITE, MOMENTO EM QUE O PLAYER SENTE O DANO
 		if(image_index >= 8 && dano == noone && image_index < 15 && posso){
-			dano = instance_create_layer(x + sprite_width/2 ,y - sprite_height/3, layer, obj_dano);
+			// Ajusta a posição do dano com base na direção do inimigo
+			// Verificar a direção do inimigo (xscale)
+			if (xscale == 1) {
+			    // Se o inimigo está virado para a direita, cria o dano à direita
+				dano = instance_create_layer(x - 110 + sprite_width / 2, y - sprite_height / 3, layer, obj_dano);
+			} else {
+			    // Se o inimigo está virado para a esquerda, cria o dano à esquerda
+				dano = instance_create_layer(x + 110 + sprite_width / 2, y - sprite_height / 3, layer, obj_dano);
+
+			}
 			dano.dano = ataque;
 			dano.pai = id;
 			posso = false;
