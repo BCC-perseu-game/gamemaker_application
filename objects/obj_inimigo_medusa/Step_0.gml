@@ -54,10 +54,16 @@ switch(estado){
 	    sprite_index = medusa_walking;
 		
 	    // Condição de saída do estado
-	    if (irandom(timer_estado) > 300) {
-	        estado = choose("parado", "parado", "walk");
-	        timer_estado = 0;
-	    }
+		if (timer_estado > 300 && irandom(100) < 10) { // 10% de chance
+		    estado = choose("parado", "parado", "walk");
+		    timer_estado = 0;
+		}
+		if (!global.vel_mult || global.vel_mult == 0) {
+		    global.vel_mult = 1; // Valor padrão
+		}
+		velh = choose(1, -1) * global.vel_mult;
+
+
 
 	    // Atacar o jogador
 	    scr_ataca_player_melee(obj_player, dist, xscale);

@@ -148,7 +148,8 @@ switch(estado)
 		
 		//Criando objeto de dano
 		if (image_index >= 2 && dano == noone && posso){
-			dano = instance_create_layer(x + sprite_width/2 , y - sprite_height/2, layer, obj_dano);
+			
+			dano = instance_create_layer(x + sprite_width/4 , y - sprite_height/2, layer, obj_dano);
 			dano.dano = ataque * ataque_mult;
 			dano.pai = id;
 			posso = false;
