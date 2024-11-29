@@ -97,10 +97,10 @@ switch(estado){
 			// Verificar a direção do inimigo (xscale)
 			if (xscale == 1) {
 			    // Se o inimigo está virado para a direita, cria o dano à direita
-				dano = instance_create_layer(x - 110 + sprite_width / 2, y - sprite_height / 3, layer, obj_dano);
+				dano = instance_create_layer(x - 110 + sprite_width / 2, (y - sprite_height / 8), layer, obj_dano);
 			} else {
 			    // Se o inimigo está virado para a esquerda, cria o dano à esquerda
-				dano = instance_create_layer(x + 110 + sprite_width / 2, y - sprite_height / 3, layer, obj_dano);
+				dano = instance_create_layer(x + 110 + sprite_width / 2, (y - sprite_height / 8), layer, obj_dano);
 
 			}
 			dano.dano = ataque;
