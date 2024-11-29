@@ -1,5 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+/// @description Inserir descrição aqui
+// Você pode escrever seu código neste editor
 
 var chao = place_meeting(x, y+1 , obj_block);
 
@@ -17,11 +19,11 @@ switch(estado){
 	case "parado":{
 		velh = 0;
 		timer_estado++;
-		if(sprite_index != spr_inimigo_esqueleto_idle){
+		if(sprite_index != medusa_idl){
 			//iniciando o estado
 			image_index = 0;
 		}
-		sprite_index = spr_inimigo_esqueleto_idle;
+		sprite_index = medusa_idl;
 		
 		//condição de troca de estado
 		if(position_meeting(mouse_x,mouse_y,self)){
@@ -43,13 +45,13 @@ switch(estado){
 	case "walk":
 	{
 	    timer_estado++;
-	    if (sprite_index != spr_inimigo_esqueleto_walk) {
+	    if (sprite_index != medusa_walking) {
 	        image_index = 0;
 	        velh = choose(1, -1) * global.vel_mult;
 
 	    }
 		
-	    sprite_index = spr_inimigo_esqueleto_walk;
+	    sprite_index = medusa_walking;
 		
 	    // Condição de saída do estado
 	    if (irandom(timer_estado) > 300) {
@@ -67,7 +69,7 @@ switch(estado){
 
 	    // Verificar ausência de chão 5 pixels à frente
 	    var check_x = x + xscale * 10;
-	    var check_y = y + 10; // Um pixel abaixo para detectar o chão
+	    var check_y = y + 1; // Um pixel abaixo para detectar o chão
 	    if (!place_meeting(check_x, check_y, obj_block)) {
 	        velh *= -1;
 	    }
@@ -79,12 +81,12 @@ switch(estado){
 	case "attack":
 	{
 		velh = 0;
-		if(sprite_index != spr_inimigo_esqueleto_attack){
+		if(sprite_index != medusa_atack){
 			image_index = 0;
 			posso = true;
 			dano = noone;
 		}
-		sprite_index = spr_inimigo_esqueleto_attack;
+		sprite_index = medusa_atack;
 		
 		if(image_index > image_number - 1){
 			estado = "parado";
@@ -119,12 +121,12 @@ switch(estado){
 	}
 	case "hit":
 		velh *= 0.8
-		if(sprite_index != spr_inimigo_esqueleto__hit){
+		if(sprite_index != medusa_idl){
 			//iniciando o que for preciso para este estado
 			image_index = 0;
 			//vida_atual--;
 		}
-		sprite_index = spr_inimigo_esqueleto__hit;
+		sprite_index = medusa_idl;
 		
 		//condicao para sair do estado
 		if(vida_atual > 0){
@@ -140,11 +142,11 @@ switch(estado){
 	case "dead":
 	{
 		velh = 0;
-		if(sprite_index != spr_inimigo_esqueleto_dead){
+		if(sprite_index != medusa_death){
 			//iniciando o que for preciso para este estado
 			image_index = 0;
 		}
-		sprite_index = spr_inimigo_esqueleto_dead;
+		sprite_index = medusa_death;
 		
 		//Morrendo de vdd
 		if(image_index > image_number - 1)

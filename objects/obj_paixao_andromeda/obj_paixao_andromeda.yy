@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bota",
-    "path":"sprites/spr_bota/spr_bota.yy",
+    "name":"coracao",
+    "path":"sprites/coracao/coracao.yy",
   },
   "spriteMaskId":null,
   "visible":true,

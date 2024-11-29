@@ -2,7 +2,6 @@
 // Você pode escrever seu código neste editor
 randomize();
 
-
 // Inherit the parent event
 event_inherited();
 
