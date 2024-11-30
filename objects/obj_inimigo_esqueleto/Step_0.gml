@@ -18,7 +18,6 @@ switch(estado){
 		velh = 0;
 		timer_estado++;
 		if(sprite_index != spr_inimigo_esqueleto_idle){
-			//iniciando o estado
 			image_index = 0;
 		}
 		sprite_index = spr_inimigo_esqueleto_idle;
